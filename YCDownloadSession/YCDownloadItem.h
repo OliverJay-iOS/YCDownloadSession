@@ -54,6 +54,7 @@ typedef NS_ENUM(NSUInteger, YCDownloadStatus) {
 @property (nonatomic, copy, nullable) NSString *fileType;
 @property (nonatomic, copy, nullable) NSString *uid;
 @property (nonatomic, copy, nonnull) NSString *saveRootPath;
+@property (nonatomic, copy, nonnull) NSString *saveName;
 /**文件沙盒保存路径*/
 @property (nonatomic, copy, readonly, nonnull) NSString *savePath;
 

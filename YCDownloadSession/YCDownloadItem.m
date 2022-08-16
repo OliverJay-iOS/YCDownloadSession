@@ -217,13 +217,13 @@ NSString * const kDownloadTaskFinishedNoti = @"kDownloadTaskFinishedNoti";
     return path;
 }
 
-- (NSString *)saveName {
+- (NSString *)getSaveName {
     NSString *saveName = self.fileId ? self.fileId : self.taskId;
-    return [saveName stringByAppendingPathExtension: self.fileExtension.length>0 ? self.fileExtension : @"data"];
+    return [saveName stringByAppendingPathExtension: self.saveName.length > 0? self.saveName : self.fileExtension.length>0 ? self.fileExtension : @"data"];
 }
 
 - (NSString *)savePath {
-    return [[self saveDirectory] stringByAppendingPathComponent:[self saveName]];
+    return [[self saveDirectory] stringByAppendingPathComponent:[self getSaveName]];
 }
 
 - (NSString *)description {
